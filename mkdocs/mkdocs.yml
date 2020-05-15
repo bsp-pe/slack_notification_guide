@@ -1,0 +1,6 @@
+site_name: Slack Notification
+
+nav:
+  - How to integrate Gitlab with Slack: gitlab.md
+
+theme: readthedocs
