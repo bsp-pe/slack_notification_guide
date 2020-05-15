@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>How to integrate Gitlab with Slack - Slack Notification</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "How to integrate Gitlab with Slack";
+    var mkdocs_page_input_path = "gitlab.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Slack Notification</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">How to integrate Gitlab with Slack</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#merge-request-slack-notification">Merge request 발생 시 Slack Notification 처리 방법</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#slack">Slack 설정</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#slack_1">브라우저에서 slack 설정</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#gitlab">Gitlab 설정</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Slack Notification</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>How to integrate Gitlab with Slack</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="how-to-integrate-gitlab-with-slack">How to integrate Gitlab with Slack</h1>
+<h2 id="merge-request-slack-notification">Merge request 발생 시 Slack Notification 처리 방법</h2>
+<h3 id="slack">Slack 설정</h3>
+<p>Notification을 받기 위한 channel을 생성한다.</p>
+<p><img src="image/1.png" alt="1" style="zoom:50%;" /></p>
+<p>채널명을 입력한다.</p>
+<p><img src="image/2.png" alt="2" style="zoom:33%;" /></p>
+<p>Notification을 받을 구성원 추가한다.</p>
+<p><img src="image/3.png" alt="3" style="zoom:33%;" /></p>
+<p>채널 생성 결과 화면</p>
+<p><img src="image/4.png" alt="4" style="zoom:50%;" /></p>
+<p>Add an App 또는 slack 우측 페이지의 Details에서 More &gt; Add apps를 클릭한다.</p>
+<p><img src="image/5.png" alt="5" style="zoom:33%;" /></p>
+<p>Incoming WebHooks 앱을 설치한다.</p>
+<p><img src="image/6.png" alt="6" style="zoom:50%;" /></p>
+<h3 id="slack_1">브라우저에서 slack 설정</h3>
+<p>팝업이 나타나면...</p>
+<p>Add to slack을 클릭한다.</p>
+<p><img src="image/7.png" alt="7" style="zoom: 67%;" /></p>
+<p>받을 채널 정보를 입력하고 하단 버튼을 클릭한다.</p>
+<p><img src="image/8.png" alt="8" style="zoom:67%;" /></p>
+<p>Webhook URL이 생성된 결과 화면이 나타난다.</p>
+<p><img src="image/9.png" alt="9" style="zoom:67%;" /></p>
+<p>위 화면 아래 쪽을 보면 Copy를 진행할 수 있도록 정리되어 있다.</p>
+<p><img src="image/10.png" alt="10" style="zoom:67%;" /></p>
+<h3 id="gitlab">Gitlab 설정</h3>
+<p><img src="image/11.png" alt="11" style="zoom:67%;" /></p>
+<p>Active를 체크하고 <strong>Merge request</strong> 를 체크한다.(필요 시 다중 체크 가능)</p>
+<p><img src="image/12.png" alt="12" style="zoom:67%;" /></p>
+<p>아래로 이동하여 Webhook 항목에 slack에서 만들어진 "Webhook URL"을 입력하고 하단 버튼을 클릭하여 설정을 마친다.</p>
+<p><img src="image/13.png" alt="13" style="zoom:67%;" /></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
