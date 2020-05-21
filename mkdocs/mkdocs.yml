@@ -2,5 +2,5 @@ site_name: Slack Notification
 
 nav:
   - How to integrate Gitlab with Slack: gitlab.md
-
+  - How to integrate Jira with Slack: jira.md
 theme: readthedocs
