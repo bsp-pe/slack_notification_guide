@@ -10,4 +10,8 @@ mkdocs build
 # github 배포
 mkdocs gh-deploy
 ```
+# gitlab
+https://github.com/bsp-pe/slack_notification_guide/blob/master/mkdocs/docs/gitlab/gitlab.md
 
+# Jira
+https://github.com/bsp-pe/slack_notification_guide/blob/master/mkdocs/docs/jira/jira.md
