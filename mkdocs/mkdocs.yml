@@ -1,7 +1,9 @@
 site_name: Slack Notification
 
 nav:
-  - How to integrate Gitlab with Slack: gitlab/gitlab.md
-  - How to integrate Jira with Slack: jira/jira.md
-  - How to integrate Jenkins with Slack: jenkins/jenkins.md
+  - 소개: index.md
+  - Slack:
+    - How to integrate Gitlab with Slack: gitlab/gitlab.md
+    - How to integrate Jira with Slack: jira/jira.md
+    - How to integrate Jenkins with Slack: jenkins/jenkins.md
 theme: readthedocs
