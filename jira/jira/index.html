@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>How to integrate Jira with Slack - Slack Notification</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "How to integrate Jira with Slack";
+    var mkdocs_page_input_path = "jira/jira.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Slack Notification</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../gitlab/gitlab/">How to integrate Gitlab with Slack</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">How to integrate Jira with Slack</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#issue-slack-notification">issue 발생 시 Slack Notification 처리 방법</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#jira">Jira 작업</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#slack">Slack 작업</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#jira_1">Jira 작업</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#slack-app">Slack App</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#jira_2">Jira 작업</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#slack-app_1">Slack App</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../jenkins/jenkins/">How to integrate Jenkins with Slack</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Slack Notification</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>How to integrate Jira with Slack</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="how-to-integrate-jira-with-slack">How to integrate Jira with Slack</h1>
+<h2 id="issue-slack-notification">issue 발생 시 Slack Notification 처리 방법</h2>
+<h3 id="jira">Jira 작업</h3>
+<ul>
+<li>
+<p>설정-&gt;앱 을 선택한다.
+<img alt="Alt text" src="../image/1.png" /></p>
+</li>
+<li>
+<p>slack 을 검색하고, 결과에서 Slack Jira Integration을 클릭한다.
+<img alt="Alt text" src="../image/2.png" /></p>
+</li>
+<li>
+<p>Slack Jira Integration 설치 화면이 나타난다.
+<img alt="Alt text" src="../image/3.png" /></p>
+</li>
+<li>
+<p>설치 를 클릭한다.
+<img alt="Alt text" src="../image/4.png" /></p>
+</li>
+<li>
+<p>상단에 설치가 진행되고 있음을 팝업으로 보여준다.
+<img alt="Alt text" src="../image/5.png" /></p>
+</li>
+<li>
+<p>설치가 완료되었음을 팝업으로 보여준다.
+<img alt="Alt text" src="../image/6.png" /></p>
+</li>
+<li>
+<p>Slack Integration을 선택한다.
+<img alt="Alt text" src="../image/7.png" /></p>
+</li>
+<li>
+<p>Sign in with Slack을 클릭한다.
+<img alt="Alt text" src="../image/8.png" /></p>
+</li>
+</ul>
+<h3 id="slack">Slack 작업</h3>
+<p>Jira로부터 알림을 받을 워크스페이스를 생성한다.</p>
+<ul>
+<li>
+<p>이메일 입력
+<img alt="Alt text" src="../image/10.png" /></p>
+</li>
+<li>
+<p>이메일로 전달된 Confirm 코드를 입력한다.
+<img alt="Alt text" src="../image/11.png" /></p>
+</li>
+<li>
+<p>회사명 또는 팀 이름을 입력한다.
+<img alt="Alt text" src="../image/12.png" /></p>
+</li>
+<li>
+<p>Workspace 이름을 지정한다.
+<img alt="Alt text" src="../image/13.png" /></p>
+</li>
+<li>
+<p>퍼미션 설정을 하고 Allow를 클릭한다.
+<img alt="Alt text" src="../image/14.png" /></p>
+</li>
+</ul>
+<h3 id="jira_1">Jira 작업</h3>
+<p>Slack으로 전달할 항목을 지정한다.</p>
+<ul>
+<li>
+<p>Slack과 연결된 Workspace를 확인한다.
+<img alt="Alt text" src="../image/16.png" /></p>
+</li>
+<li>
+<p>Project notifications 탭을 선택하고 Create를 클릭한다.
+<img alt="Alt text" src="../image/17.png" /></p>
+</li>
+<li>
+<p>Slack 채널을 선택하고 채널로 전달할 때 사용할 토픽을 지정한다.
+<img alt="Alt text" src="../image/19.png" /></p>
+</li>
+</ul>
+<h3 id="slack-app">Slack App</h3>
+<ul>
+<li>Jira작업에 따라 Slack Workspace연결과 channel이 Issue라는 토픽으로 연결 되었음이 나타난다.
+<img alt="Alt text" src="../image/20.png" /></li>
+</ul>
+<h3 id="jira_2">Jira 작업</h3>
+<ul>
+<li>Jira에서 이슈를 생성한다.
+<img alt="Alt text" src="../image/21.png" /></li>
+</ul>
+<h3 id="slack-app_1">Slack App</h3>
+<ul>
+<li>opsgo 채널로 정상적인 notification이 전달됨을 확인할 수 있다.
+<img alt="Alt text" src="../image/22.png" /></li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../jenkins/jenkins/" class="btn btn-neutral float-right" title="How to integrate Jenkins with Slack">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../gitlab/gitlab/" class="btn btn-neutral" title="How to integrate Gitlab with Slack"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../gitlab/gitlab/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../jenkins/jenkins/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

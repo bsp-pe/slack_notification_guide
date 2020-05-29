@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>How to integrate Jenkins with Slack - Slack Notification</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "How to integrate Jenkins with Slack";
+    var mkdocs_page_input_path = "jenkins/jenkins.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Slack Notification</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../gitlab/gitlab/">How to integrate Gitlab with Slack</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../jira/jira/">How to integrate Jira with Slack</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">How to integrate Jenkins with Slack</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1-slack">1. Slack 설정</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1-1-jenkins-app">1-1) Jenkins APP 추가</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-jenkins">2. Jenkins 설정</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#2-1-jenkins-plugin">2-1) Jenkins plugin 추가</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-2-slack-credential">2-2) slack credential 생성</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-3-jenkins">2-3) Jenkins 시스템 설정 등록</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-4-jenkins-project">2-4) Jenkins project 설정</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#2-4-1">2-4-1) 일반 설정</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#2-4-2-pipeline-or-blue-ocean">2-4-2) pipeline or blue ocean 인 경우</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Slack Notification</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>How to integrate Jenkins with Slack</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="how-to-integrate-jenkins-with-slack">How to integrate Jenkins with Slack</h1>
+<h2 id="1-slack">1. Slack 설정</h2>
+<h3 id="1-1-jenkins-app">1-1) Jenkins APP 추가</h3>
+<ul>
+<li>
+<p>Apps &gt; JenkinsCI &gt; Add 클릭
+<img alt="Alt text" src="../image/sl_add1.png" /></p>
+</li>
+<li>
+<p>Add to Slack 버튼 클릭
+<img alt="Alt text" src="../image/sl_add2.png" /></p>
+</li>
+<li>
+<p>slack 연동 채널 입력 후 Add 버튼 클릭
+<img alt="Alt text" src="../image/sl_add3.png" /></p>
+</li>
+<li>
+<p>생성 완료</p>
+<blockquote>
+<p>설치 과정이 마무리되면 Slack과 Jenkins의 연동 가이드가 나오며, 가이드 절차에 따라 설정해주면 됩니다.<br>
+특히, Step 3의 Base URL과 Integration Token은 Jenkins 설정에 필요한 값으로 따로 기록해 두는 것이 좋습니다.<br>
+단, 연동 가이드의 jenkins plugin 버전이 다른 경우 Jenkins 설정은 해당 가이드 문서를 따라 진행해주세요.
+<img alt="Alt text" src="../image/sl_add4.png" /></p>
+</blockquote>
+</li>
+</ul>
+<h2 id="2-jenkins">2. Jenkins 설정</h2>
+<h3 id="2-1-jenkins-plugin">2-1) Jenkins plugin 추가</h3>
+<ul>
+<li>Slack Notification 검색 후 설치
+<img alt="Alt text" src="../image/jk_plugin.png" /></li>
+</ul>
+<h3 id="2-2-slack-credential">2-2) slack credential 생성</h3>
+<ul>
+<li>Add Credentials 클릭
+<img alt="Alt text" src="../image/jk_addcredential.png" /></li>
+<li>설정값<blockquote>
+<p>Kind : Secret Key <br>
+secret : 슬랙에서 생성한 토큰값 입력 <br>
+id : 화면에 보이는 id 값
+<img alt="Alt text" src="../image/jk_credential.png" /></p>
+</blockquote>
+</li>
+</ul>
+<h3 id="2-3-jenkins">2-3) Jenkins 시스템 설정 등록</h3>
+<p>Jenkins 설정 등록을 하여 Jenkins 와 Slack을 연동한다.</p>
+<ul>
+<li>
+<p>Jenkins 관리 &gt; 시스템 설정
+<img alt="Alt text" src="../image/jk_config.png" /></p>
+</li>
+<li>
+<p>Jenkins Slack 설정 및 테스트</p>
+<blockquote>
+<p>workspace : slack 결과에 나온 Team Subdomain 입력 <br>
+Credential : 위에 생성한 Slack credential <br>
+member id :  slack channel id <br>
+Test Connection : 접속 테스트 버튼 -&gt; 정상인 경우 좌측에 'Success' 출력
+<img alt="Alt text" src="../image/jk_config2.png" /></p>
+</blockquote>
+</li>
+</ul>
+<h3 id="2-4-jenkins-project">2-4) Jenkins project 설정</h3>
+<p>Jenkins project 에 따라서 Slack 연결을 별도로 연결하여 사용가능하다.</p>
+<h4 id="2-4-1">2-4-1) 일반 설정</h4>
+<ul>
+<li>Jenkins project &gt; 구성 &gt; Slack Notifications 선택
+<img alt="Alt text" src="../image/pj_normal.png" /></li>
+<li>Slack Notifications 필요한 내용 선택<blockquote>
+<p><img alt="Alt text" src="../image/pj_normal2.png" /></p>
+</blockquote>
+</li>
+</ul>
+<h4 id="2-4-2-pipeline-or-blue-ocean">2-4-2) pipeline or blue ocean 인 경우</h4>
+<blockquote>
+<p>JenkinsFile 을 이용하여 작업한다. <br></p>
+</blockquote>
+<ul>
+<li>공통 함수 생성</li>
+</ul>
+<pre><code>def resultSlackSend(bar_color, result) {
+  slackSend color: bar_color, message:&quot;${env.JOB_NAME} - #${env.BUILD_NUMBER} : ${result} after ${currentBuild.durationString.split(&quot; and&quot;)[0]} (&lt;${env.BUILD_URL}|Open&gt;)&quot;
+}
+</code></pre>
+
+<ul>
+<li>작업 시작 하는 경우<blockquote>
+<p>pipeline step 안에서 호출</p>
+</blockquote>
+</li>
+</ul>
+<pre><code>resultSlackSend(&quot;good&quot;, &quot;START&quot;)
+</code></pre>
+
+<ul>
+<li>작업 종료한 경우<blockquote>
+<p>pipeline steps 밖에서 호출</p>
+</blockquote>
+</li>
+</ul>
+<pre><code>post {
+    success {
+        // 빌드의 결과가 성공일경우 
+        resultSlackSend(&quot;good&quot;, &quot;SUCCESS&quot;)
+    }
+    failure {
+        // 빌드의 결과가 실패일경우 
+        resultSlackSend(&quot;danger&quot;, &quot;FAILURE&quot;)
+    }
+    aborted {
+        // 빌드를 중간에 멈추는 경우
+        resultSlackSend(&quot;warning&quot;, &quot;ABORTED&quot;)
+    }
+}
+</code></pre>
+
+<ul>
+<li>결과<blockquote>
+<p><img alt="Alt text" src="../image/pj_result.png" /></p>
+</blockquote>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../../jira/jira/" class="btn btn-neutral" title="How to integrate Jira with Slack"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../jira/jira/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
